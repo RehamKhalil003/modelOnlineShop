@@ -20,10 +20,10 @@ export default function FeaturedSection() {
   }).slice(0, 8);
 
   return (
-    <section className="py-24" style={{ background: 'var(--bg-page)' }}>
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section className="py-14 sm:py-24" style={{ background: 'var(--bg-page)' }}>
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         <FadeIn>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-10 sm:mb-12">
             <div>
               <span className="accent-line w-8 mb-3 block" />
               <p className="text-[10px] tracking-[0.45em] uppercase font-semibold mb-2" style={{ color: 'var(--v-400)' }}>

@@ -37,7 +37,7 @@ export default function WishlistPage() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 py-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {items.length === 0 ? (
           <FadeIn className="text-center py-24">
             <div className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6"

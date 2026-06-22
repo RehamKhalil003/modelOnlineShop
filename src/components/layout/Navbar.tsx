@@ -56,7 +56,7 @@ export default function Navbar() {
           boxShadow: '0 4px 24px rgba(124,58,237,0.06)',
         } : { background: 'transparent' }}
       >
-        <div className="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
 
           {/* Logo */}
           <Link href="/" className="text-xl tracking-[0.5em] uppercase font-bold"
@@ -160,21 +160,27 @@ export default function Navbar() {
               <button onClick={() => setMenuOpen(false)} style={{ color: 'rgba(196,181,253,0.8)' }}><X size={24} /></button>
             </div>
 
-            <div className="relative flex-1 flex flex-col justify-center px-8 gap-6">
+            <div className="relative flex-1 flex flex-col justify-center px-8 gap-5">
               {navLinks.map((link, i) => (
                 <motion.div key={link.label}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.07 }}>
                   <Link href={link.href} onClick={() => setMenuOpen(false)}
-                    className="text-4xl font-light tracking-wider transition-all"
-                    style={{ color: 'rgba(196,181,253,0.7)' }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#F5F3FF')}
-                    onMouseLeave={e => (e.currentTarget.style.color = 'rgba(196,181,253,0.7)')}>
+                    className="text-3xl sm:text-4xl font-light tracking-wider transition-all block"
+                    style={{ color: 'rgba(196,181,253,0.7)' }}>
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
+              <div className="mt-6 pt-6 flex gap-6" style={{ borderTop: '1px solid rgba(139,92,246,0.15)' }}>
+                <Link href="/auth/login" onClick={() => setMenuOpen(false)}
+                  className="text-sm tracking-widest uppercase" style={{ color: 'rgba(249,168,212,0.7)' }}>Sign In</Link>
+                <Link href="/wishlist" onClick={() => setMenuOpen(false)}
+                  className="text-sm tracking-widest uppercase" style={{ color: 'rgba(249,168,212,0.7)' }}>Wishlist</Link>
+                <Link href="/cart" onClick={() => setMenuOpen(false)}
+                  className="text-sm tracking-widest uppercase" style={{ color: 'rgba(249,168,212,0.7)' }}>Cart</Link>
+              </div>
             </div>
           </motion.div>
         )}

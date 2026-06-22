@@ -99,7 +99,8 @@ export default function ProductCard({ product }: { product: Product }) {
           {/* Wishlist button top-right */}
           <motion.button
             onClick={handleWishlist}
-            animate={{ opacity: hovered || wishlisted ? 1 : 0, scale: hovered ? 1 : 0.8 }}
+            animate={{ opacity: wishlisted ? 1 : hovered ? 1 : 0, scale: hovered ? 1 : wishlisted ? 1 : 0.8 }}
+            style={{ touchAction: 'manipulation' }}
             whileTap={{ scale: 0.85 }}
             className="absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center"
             style={{
@@ -114,11 +115,11 @@ export default function ProductCard({ product }: { product: Product }) {
               style={wishlisted ? { fill: 'white', color: 'white' } : { color: '#7C3AED' }} />
           </motion.button>
 
-          {/* Add to cart — slides up on hover */}
+          {/* Add to cart — always visible on mobile, slides up on hover on desktop */}
           <motion.div
             animate={{ y: hovered ? 0 : '100%' }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="absolute bottom-0 left-0 right-0 p-3"
+            className="absolute bottom-0 left-0 right-0 p-3 max-sm:!translate-y-0"
           >
             <button
               onClick={handleAddToCart}

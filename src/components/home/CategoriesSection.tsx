@@ -8,7 +8,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function CategoriesSection() {
   return (
-    <section className="max-w-[1400px] mx-auto px-6 py-24">
+    <section className="max-w-[1400px] mx-auto px-4 sm:px-6 py-14 sm:py-24">
       <FadeIn>
         <div className="text-center mb-14">
           <span className="accent-line w-10 mb-4 mx-auto block" />
@@ -19,7 +19,7 @@ export default function CategoriesSection() {
         </div>
       </FadeIn>
 
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {categories.map((cat, i) => (
           <FadeIn key={cat.id} delay={i * 0.08}>
             <Link href={`/products?category=${cat.slug}`}>

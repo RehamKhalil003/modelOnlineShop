@@ -14,7 +14,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-28 my-12">
+    <section className="relative overflow-hidden py-16 sm:py-28 my-8 sm:my-12">
       {/* Deep violet background */}
       <div className="absolute inset-0"
         style={{ background: 'linear-gradient(145deg,#0D0118 0%,#1A0533 40%,#2D0F5E 80%,#0D0118 100%)' }} />

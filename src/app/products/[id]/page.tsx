@@ -46,7 +46,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   return (
     <div className="min-h-screen pt-16" style={{ background: 'var(--bg-page)' }}>
-      <div className="max-w-[1400px] mx-auto px-6 py-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20">
           {/* Image gallery */}
           <div className="flex gap-4">

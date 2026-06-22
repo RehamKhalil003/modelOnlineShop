@@ -58,7 +58,7 @@ export default function HeroSection() {
   const slide = slides[current];
 
   return (
-    <section ref={ref} className="relative h-screen min-h-[700px] overflow-hidden" style={{ background: 'var(--bg-dark)' }}>
+    <section ref={ref} className="relative h-screen min-h-[600px] overflow-hidden" style={{ background: 'var(--bg-dark)' }}>
 
       {/* ── Background image ── */}
       <AnimatePresence mode="wait">
@@ -143,8 +143,8 @@ export default function HeroSection() {
                 </motion.div>
 
                 {/* Headline */}
-                <h1 className="leading-[0.9] mb-7 tracking-tight font-bold"
-                  style={{ fontSize: 'clamp(4rem,9vw,9rem)', color: '#F5F3FF' }}>
+                <h1 className="leading-[0.9] mb-5 sm:mb-7 tracking-tight font-bold"
+                  style={{ fontSize: 'clamp(3rem,8vw,9rem)', color: '#F5F3FF' }}>
                   {slide.title.map((line, i) => (
                     <motion.div key={i}
                       initial={{ opacity: 0, x: -50 }}
@@ -166,7 +166,7 @@ export default function HeroSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.65 }}
-                  className="text-sm tracking-wide max-w-xs mb-10 leading-relaxed"
+                  className="text-sm tracking-wide max-w-xs mb-7 sm:mb-10 leading-relaxed"
                   style={{ color: 'rgba(196,181,253,0.7)' }}>
                   {slide.sub}
                 </motion.p>
@@ -254,7 +254,7 @@ export default function HeroSection() {
           transition={{ delay: 1.1 }}
           className="relative z-10 border-t"
           style={{ borderColor: 'rgba(167,139,250,0.15)', background: 'rgba(13,1,24,0.5)', backdropFilter: 'blur(12px)' }}>
-          <div className="max-w-[1400px] mx-auto px-6 py-5 grid grid-cols-4 gap-4">
+          <div className="max-w-[1400px] mx-auto px-6 py-4 sm:py-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
             {stats.map((s, i) => (
               <div key={i} className="text-center">
                 <p className="text-lg font-bold" style={{
@@ -269,7 +269,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Slide dots */}
-      <div className="absolute bottom-24 left-6 flex gap-2 z-10">
+      <div className="absolute bottom-20 sm:bottom-24 left-6 flex gap-2 z-10">
         {slides.map((_, i) => (
           <motion.button key={i} onClick={() => setCurrent(i)}
             animate={{ width: i === current ? 28 : 6 }}
@@ -282,7 +282,7 @@ export default function HeroSection() {
       <motion.div
         animate={{ y: [0, 9, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-28 right-8 flex flex-col items-center gap-2 z-10"
+        className="absolute bottom-28 right-8 hidden sm:flex flex-col items-center gap-2 z-10"
         style={{ color: 'rgba(167,139,250,0.45)' }}>
         <span className="text-[9px] tracking-widest uppercase">Scroll</span>
         <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom,rgba(124,58,237,0.5),transparent)' }} />

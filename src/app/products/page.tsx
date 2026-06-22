@@ -59,7 +59,7 @@ function ProductsContent() {
           <div className="absolute bottom-0 left-20 w-60 h-60 rounded-full"
             style={{ background: 'radial-gradient(circle,rgba(236,72,153,0.12) 0%,transparent 65%)' }} />
         </div>
-        <div className="max-w-[1400px] mx-auto px-6 py-16 relative">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-10 sm:py-16 relative">
           <div className="flex items-center gap-3 mb-3">
             <div className="h-px w-8" style={{ background: 'linear-gradient(to right,rgba(196,181,253,0.5),transparent)' }} />
             <p className="text-[10px] tracking-[0.4em] uppercase font-semibold" style={{ color: 'rgba(249,168,212,0.7)' }}>MODEL</p>
@@ -72,7 +72,7 @@ function ProductsContent() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 py-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Toolbar */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6"
           style={{ borderBottom: '1px solid rgba(139,92,246,0.08)' }}>

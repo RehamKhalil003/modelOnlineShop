@@ -5,7 +5,7 @@ import { Globe, AtSign, Share2, Play } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="mt-12" style={{ background: 'var(--bg-dark)', borderTop: '1px solid rgba(139,92,246,0.1)' }}>
-      <div className="max-w-[1400px] mx-auto px-6 py-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-12 sm:py-16">
         {/* Top gradient line */}
         <div className="h-px w-full mb-14"
           style={{ background: 'linear-gradient(to right,transparent,rgba(124,58,237,0.4),rgba(236,72,153,0.3),transparent)' }} />

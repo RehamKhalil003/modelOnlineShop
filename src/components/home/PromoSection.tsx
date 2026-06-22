@@ -29,7 +29,7 @@ const promos = [
 export default function PromoSection() {
   return (
     <section className="py-16" style={{ background: 'var(--bg-page)' }}>
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-6">
           {promos.map((p, i) => (
             <FadeIn key={p.label} delay={i * 0.15}>
@@ -39,7 +39,7 @@ export default function PromoSection() {
                   transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                   className="relative overflow-hidden rounded-3xl group cursor-pointer"
                   style={{
-                    height: 480,
+                    height: 'clamp(320px, 50vw, 480px)',
                     boxShadow: '0 8px 40px rgba(124,58,237,0.12)',
                   }}
                 >

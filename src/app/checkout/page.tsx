@@ -58,7 +58,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen pt-16" style={{ background: 'var(--bg-page)' }}>
-      <div className="max-w-[1200px] mx-auto px-6 py-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Progress steps */}
         <div className="flex items-center justify-center mb-12 overflow-x-auto">
           {steps.map((s, i) => (

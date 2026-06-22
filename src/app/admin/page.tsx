@@ -32,7 +32,7 @@ const statusStyle: Record<string, { color: string; background: string }> = {
 export default function AdminPage() {
   return (
     <div className="min-h-screen pt-16" style={{ background: 'var(--bg-page)' }}>
-      <div className="max-w-[1400px] mx-auto px-6 py-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-8 sm:py-10">
         <FadeIn className="mb-10">
           <div className="flex items-center gap-3 mb-2">
             <div className="h-px w-8" style={{ background: 'linear-gradient(to right,#7C3AED,transparent)' }} />
