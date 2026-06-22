@@ -100,10 +100,10 @@ export default function ProductCard({ product }: { product: Product }) {
           <motion.button
             onClick={handleWishlist}
             animate={{ opacity: wishlisted ? 1 : hovered ? 1 : 0, scale: hovered ? 1 : wishlisted ? 1 : 0.8 }}
-            style={{ touchAction: 'manipulation' }}
             whileTap={{ scale: 0.85 }}
             className="absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center"
             style={{
+              touchAction: 'manipulation',
               background: wishlisted
                 ? 'linear-gradient(135deg,#EC4899,#7C3AED)'
                 : 'rgba(255,255,255,0.9)',
