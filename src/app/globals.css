@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────
+   MODEL — Brand Design Tokens
+   Palette: violet · pink · lavender · blush
+───────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background */
+  --bg-page:    #FAF5FF;
+  --bg-dark:    #0D0118;
+  --bg-deep:    #130025;
+  --bg-card:    #FFFFFF;
+  --bg-muted:   #F5EEFF;
+
+  /* Violet scale */
+  --v-950: #0D0118;
+  --v-900: #1A0533;
+  --v-800: #2D0F5E;
+  --v-700: #4C1D95;
+  --v-600: #6D28D9;
+  --v-500: #7C3AED;
+  --v-400: #8B5CF6;
+  --v-300: #A78BFA;
+  --v-200: #C4B5FD;
+  --v-100: #EDE9FE;
+  --v-50:  #F5F3FF;
+
+  /* Pink/rose scale */
+  --p-600: #BE185D;
+  --p-500: #EC4899;
+  --p-400: #F472B6;
+  --p-300: #F9A8D4;
+  --p-200: #FBCFE8;
+  --p-100: #FCE7F3;
+
+  /* Gradients */
+  --grad-primary:  linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+  --grad-soft:     linear-gradient(135deg, #C4B5FD 0%, #FBCFE8 100%);
+  --grad-warm:     linear-gradient(135deg, #A78BFA 0%, #F472B6 50%, #FB923C 100%);
+  --grad-glow:     linear-gradient(135deg, #5B21B6 0%, #BE185D 100%);
+  --grad-dark-bg:  linear-gradient(160deg, #0D0118 0%, #1A0533 50%, #0A0015 100%);
+  --grad-hero:     linear-gradient(120deg, rgba(124,58,237,0.9) 0%, rgba(236,72,153,0.7) 100%);
+
+  /* Shadows */
+  --shadow-card:       0 4px 24px rgba(124,58,237,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-card-hover: 0 16px 48px rgba(124,58,237,0.18), 0 4px 12px rgba(236,72,153,0.08);
+  --shadow-glow:       0 0 40px rgba(124,58,237,0.3);
+  --shadow-pink-glow:  0 0 40px rgba(236,72,153,0.25);
+
+  /* Text on light */
+  --text-dark:  #1A0533;
+  --text-mid:   #6D28D9;
+  --text-muted: #8B5CF6;
+
+  /* Text on dark */
+  --text-light:      #F5F3FF;
+  --text-light-mid:  rgba(196,181,253,0.85);
+  --text-light-mute: rgba(167,139,250,0.55);
+
+  /* Borders */
+  --border-light: rgba(139,92,246,0.12);
+  --border-dark:  rgba(167,139,250,0.15);
+  --border-pink:  rgba(236,72,153,0.2);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Keep white as real white for card backgrounds */
+  --color-white: #FFFFFF;
+  /* Remap black to deep violet for any bg-black usage */
+  --color-black: #0D0118;
+  /* Tune neutral scale toward violet-tinted greys */
+  --color-neutral-950: #0D0118;
+  --color-neutral-900: #1A0533;
+  --color-neutral-800: #2D1045;
+  --color-neutral-700: #4a2070;
+  --color-neutral-600: #6D28D9;
+  --color-neutral-500: #8B5CF6;
+  --color-neutral-400: #A78BFA;
+  --color-neutral-300: #C4B5FD;
+  --color-neutral-200: #DDD6FE;
+  --color-neutral-100: #EDE9FE;
+  --color-neutral-50:  #F5F3FF;
+  /* Brand amber → hot pink */
+  --color-amber-400: #F472B6;
+  --color-amber-300: #F9A8D4;
+  /* Reds → rose-berry */
+  --color-red-500: #BE185D;
+  --color-red-400: #EC4899;
+  /* Status colours */
+  --color-green-400: #34D399;
+  --color-blue-400:  #818CF8;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-dark);
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body { cursor: auto; }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139,92,246,0.25) transparent;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ─── Reusable gradient utilities ─── */
+.grad-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grad-text-soft {
+  background: var(--grad-soft);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grad-border {
+  background:
+    linear-gradient(white, white) padding-box,
+    var(--grad-primary) border-box;
+  border: 1.5px solid transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.glass-violet {
+  background: rgba(124, 58, 237, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+/* Gradient orb blob — decorative */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Gradient button default hover shimmer */
+.btn-grad {
+  background: var(--grad-primary);
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.btn-grad:hover {
+  box-shadow: 0 8px 32px rgba(124,58,237,0.35), 0 2px 8px rgba(236,72,153,0.2);
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Section accent line */
+.accent-line {
+  display: inline-block;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--grad-primary);
 }
